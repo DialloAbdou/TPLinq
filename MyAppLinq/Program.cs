@@ -1,21 +1,17 @@
 ﻿// See https://aka.ms/new-console-template for more information
 using MyAppLinq;
+using MyAppLinq.CollectionToCollection;
 
+//Console.WriteLine("Utlisation de Extension");
 
-//var liste = new MaListe(10);
+//int[] tableau = new[] { 1, 2, 3, 4, 5, 6 };
 
-//foreach (var val in liste)
-//{
-//    Console.WriteLine(val );
-//}
-//Console.ReadLine();
+//var NbrePaire = tableau.CompterPair();
+//Console.WriteLine($"le nombre Paire est: {NbrePaire}");
 
-Console.WriteLine("Utlisation de Extension");
+Console.WriteLine("Utilisation de operation Where!");
 
-int[] tableau = new[] { 1, 2, 3, 4, 5, 6 };
-
-var NbrePaire = tableau.CompterPair();
-Console.WriteLine($"le nombre Paire est: {NbrePaire}");
+Ope_Where.Methode();
 
 Console.ReadLine();
 
