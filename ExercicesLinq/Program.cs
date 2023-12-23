@@ -22,3 +22,6 @@ foreach (Personne person in personnethirty)
 Console.ReadLine();
 
 // afficher 0nom, prenom, age , des personnes qui ont plus de 30ans
+
+// take : afficher les 10 première personnes de la liste 
+// Recuperer les personnes qui ont moins de 50 ans 
