@@ -2,7 +2,7 @@
 {
     public class Ope_Take
     {
-        private static int[] entiers = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+        private static int[] entiers = new int[10] { 2, 28, 3, 4, 5, 6, 7, 8, 9, 10 };
         public static void mesthodesTake()
         {
             var mesFavoris = entiers.Take(5);

@@ -9,6 +9,7 @@ using MyAppLinq.CollectionToCollection;
 //Console.WriteLine("Utilisation de operation Where!");
 //Ope_Where.Methode();
 Ope_Take.mesthodesTake();
+Ope_Skip.MehtodeSkip();
 
 Console.ReadLine();
 
