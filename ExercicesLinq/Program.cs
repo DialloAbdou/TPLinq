@@ -9,8 +9,7 @@ var faker = new Faker<Personne>()
     .RuleFor(p => p.Nom, f => f.Person.LastName)
     .RuleFor(p => p.Prenom, f => f.Person.FirstName)
     .RuleFor(p => p.Age, f => (int)DateTime.Today.Subtract(f.Person.DateOfBirth).TotalDays / 365);
-
-var personnes = faker.Generate(100);
+ var personnes = faker.Generate(100);
 
 //foreach (var person in personnes)
 //{
@@ -18,7 +17,7 @@ var personnes = faker.Generate(100);
 
 //}
 
-//var personnethirty = personnes.Where(p => p.Age > 30);
+//var personnethirty = personnes.Where(p=>p.Age > 30).ToList();
 
 //foreach (Personne person in personnethirty)
 //{
@@ -29,40 +28,54 @@ var personnes = faker.Generate(100);
 // afficher 0nom, prenom, age , des personnes qui ont plus de 30ans
 
 // take : afficher les 10 première personnes de la liste 
-//var Firsten = personnes.Take(10);
 
-//Console.WriteLine("les 10 premères Personnes");
 
-//foreach (var person in Firsten)
+//IEnumerable<Personne>? personnesTen = personnes.Take(10);
+
+//Console.WriteLine("les 10 premières personnes de la Liste");
+
+//foreach (var p in personnesTen)
+//{
+//    Console.WriteLine($" Nom : {p.Nom} Prénom {p.Prenom}, Age : {p.Age} ");
+//}
+//// Ensuite afficher les personnes tantque l'âge est inferieur à 69
+
+//var personLessfifty = personnesTen.TakeWhile(p => p.Age <=69);
+
+//Console.WriteLine("les afficher les persnne dont l'age est inferieur ");
+
+//foreach (var p in personLessfifty)
+//{
+//    Console.WriteLine($" Nom : {p.Nom} Prénom {p.Prenom}, Age : {p.Age} ");
+
+//}
+//// Skip: L'utilisateur doit saisir la page qu'il veut voir et le nombre d'element par pages
+
+//Console.WriteLine("Veuillez saisir la taille de page ");
+
+//int taille = int.Parse(Console.ReadLine());
+
+//Console.WriteLine("veuillez saisir le numes de pages");
+//int pages = int.Parse(Console.ReadLine());
+//var personneParPages = personnes.Skip((pages-1)*taille).Take(taille);
+
+//Console.WriteLine("les personnes pour cette pages");
+
+//foreach (var person in personneParPages)
 //{
 //    Console.WriteLine($"Nom: {person.Nom}, Prenom: {person.Prenom}, Age :{person.Age} ans ");
 //}
-//// Recuperer les personnes qui ont moins de 50 ans 
 
-//var PeronnLessFifty = personnes.TakeWhile(p => p.Age <= 70);
+////distinct : Afficher des personnes avec un age different
+var personndeDistinct = personnes.DistinctBy(p => p.Age).Take(20);
 
-//Console.WriteLine("====les personnes dont l'âge est inferieur à 50===");
+Console.WriteLine("les distinct Ages");
 
-//foreach (var person in PeronnLessFifty)
-//{
-//    Console.WriteLine($"Nom: {person.Nom}, Prenom: {person.Prenom}, Age :{person.Age} ans ");
-
-//}
-
-// Skip  Saisir la page qu'il v voir et nombre d'élement par page en se servant de skip et de take
-
-Console.WriteLine("Veuillez saisir la taille de page ");
-int taille = int.Parse(Console.ReadLine());
-Console.WriteLine("veuillez saisir le numes de pages");
-int pages = int.Parse(Console.ReadLine());
-var personneParPages = personnes.Skip((pages-1)*taille).Take(taille);
-
-Console.WriteLine("les personnes pour cette pages");
-
-foreach (var person in personneParPages)
+foreach (var person in personndeDistinct)
 {
-  Console.WriteLine($"Nom: {person.Nom}, Prenom: {person.Prenom}, Age :{person.Age} ans ");
+    Console.WriteLine($"Nom: {person.Nom}, Prenom: {person.Prenom}, Age :{person.Age} ans ");
 
 }
+
 
 Console.ReadLine();

@@ -12,7 +12,7 @@ namespace MyAppLinq.CollectionToCollection
         {
             int[] entiers = new int[10] { 1, 2, 3, 4, 5, 1, 2, 6, 7, 8};
             
-            var entierSkip = entiers.Skip(0);
+            var entierSkip = entiers.Skip(2);
             
             Console.WriteLine("utilisation Skip ");
             foreach (int entier in entierSkip)

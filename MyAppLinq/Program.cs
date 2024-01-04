@@ -8,8 +8,9 @@ using MyAppLinq.CollectionToCollection;
 //Console.WriteLine($"le nombre Paire est: {NbrePaire}");
 //Console.WriteLine("Utilisation de operation Where!");
 //Ope_Where.Methode();
-Ope_Take.mesthodesTake();
-Ope_Skip.MehtodeSkip();
+//Ope_Take.mesthodesTake();
+//Ope_Skip.MehtodeSkip();
+Ope_Distinct.methodeDistinct();
 
 Console.ReadLine();
 
