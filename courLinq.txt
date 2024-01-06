@@ -7,3 +7,6 @@ Categorie3 => on part de rien on obtient une collection
 Take : permet de recuperer une certaines élements en fonction du nombres de perosonnes passé en parametre
 
 Skip : permet de sauter le nombre d'élément passé en parametre et récuperer le nombre d'élément restant
+
+Select : son rôle est de transformation sur chacun des éléments de votre collection en fin d'optenir un nouveau type 
+d'élement de collection

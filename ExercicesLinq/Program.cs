@@ -67,15 +67,20 @@ var faker = new Faker<Personne>()
 //}
 
 ////distinct : Afficher des personnes avec un age different
-var personndeDistinct = personnes.DistinctBy(p => p.Age).Take(20);
+//var personndeDistinct = personnes.DistinctBy(p => p.Age).Take(20);
 
-Console.WriteLine("les distinct Ages");
+//Console.WriteLine("les distinct Ages");
 
-foreach (var person in personndeDistinct)
+//foreach (var person in personndeDistinct)
+//{
+//    Console.WriteLine($"Nom: {person.Nom}, Prenom: {person.Prenom}, Age :{person.Age} ans ");
+
+//}
+var personName = personnes.Select(p => p.Prenom);
+
+foreach (var person in personName)
 {
-    Console.WriteLine($"Nom: {person.Nom}, Prenom: {person.Prenom}, Age :{person.Age} ans ");
-
+    Console.WriteLine(person);
 }
-
 
 Console.ReadLine();
