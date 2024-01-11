@@ -10,3 +10,5 @@ Skip : permet de sauter le nombre d'élément passé en parametre et récuperer 
 
 Select : son rôle est de transformation sur chacun des éléments de votre collection en fin d'optenir un nouveau type 
 d'élement de collection
+
+SelectMany va nous permmettrede mettre en plat une collection qui contient elle même des collections

@@ -9,13 +9,28 @@ var faker = new Faker<Personne>()
     .RuleFor(p => p.Nom, f => f.Person.LastName)
     .RuleFor(p => p.Prenom, f => f.Person.FirstName)
     .RuleFor(p => p.Age, f => (int)DateTime.Today.Subtract(f.Person.DateOfBirth).TotalDays / 365);
- var personnes = faker.Generate(100);
+List<Personne>? personnes = faker.Generate(100);
+foreach (var person in personnes)
+{
+    int nbEnfant = Random.Shared.Next(0,6);
+    person.Enfants = faker.Generate(nbEnfant);
+}
+// ici on recupere la liste des enfants 
+var enfants =  personnes.SelectMany(p=> p.Enfants).ToList();
 
-//foreach (var person in personnes)
-//{
-//    Console.WriteLine($" Nom: {person.Nom}, Prenom: {person.Prenom}, Age: {person.Age}");
+foreach (var enfant in enfants)
+{
+    Console.WriteLine($"Nom: {enfant.Nom}, Prenom : {enfant.Prenom}, Age : {enfant.Age}");
+}
+//  recuperer les prenoms des enfants qui se trouve dans la liste
 
-//}
+var enfantPrenoms = personnes.SelectMany(p => p.Enfants, (_, enfant) => enfant.Prenom);
+
+foreach(var prenom in enfantPrenoms)
+{
+    Console.WriteLine(prenom);
+}
+
 
 //var personnethirty = personnes.Where(p=>p.Age > 30).ToList();
 
@@ -75,12 +90,12 @@ var faker = new Faker<Personne>()
 //{
 //    Console.WriteLine($"Nom: {person.Nom}, Prenom: {person.Prenom}, Age :{person.Age} ans ");
 
-//}
-var personName = personnes.Select(p => p.Prenom);
+////}
+//var personName = personnes.Select(p => p.Prenom);
 
-foreach (var person in personName)
-{
-    Console.WriteLine(person);
-}
+//foreach (var person in personName)
+//{
+//    Console.WriteLine(person);
+//}
 
 Console.ReadLine();

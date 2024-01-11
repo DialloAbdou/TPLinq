@@ -10,7 +10,9 @@ using MyAppLinq.CollectionToCollection;
 //Ope_Where.Methode();
 //Ope_Take.mesthodesTake();
 //Ope_Skip.MehtodeSkip();
-Ope_Distinct.methodeDistinct();
+//Ope_Distinct.methodeDistinct();
+//Ope_SelectMany.methodeSelectManyEntier();
+Ope_SelectMany.methodeSelectManyDate();
 
 Console.ReadLine();
 
