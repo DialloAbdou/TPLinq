@@ -12,7 +12,9 @@ using MyAppLinq.CollectionToCollection;
 //Ope_Skip.MehtodeSkip();
 //Ope_Distinct.methodeDistinct();
 //Ope_SelectMany.methodeSelectManyEntier();
-Ope_SelectMany.methodeSelectManyDate();
+//Ope_SelectMany.methodeSelectManyDate();
+Ope_OrderBy.getOperOrderBy();
+Ope_OrderBy.getOperOrderByDescending();
 
 Console.ReadLine();
 

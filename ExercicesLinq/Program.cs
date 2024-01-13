@@ -24,7 +24,7 @@ foreach (var enfant in enfants)
 }
 //  recuperer les prenoms des enfants qui se trouve dans la liste
 
-var enfantPrenoms = personnes.SelectMany(p => p.Enfants, (_, enfant) => enfant.Prenom);
+var enfantPrenoms = personnes.SelectMany(p => p.Enfants,(Personne _, Personne enfan)=>enfan.Prenom);
 
 foreach(var prenom in enfantPrenoms)
 {
