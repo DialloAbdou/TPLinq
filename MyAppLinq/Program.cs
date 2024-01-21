@@ -13,9 +13,9 @@ using MyAppLinq.CollectionToCollection;
 //Ope_Distinct.methodeDistinct();
 //Ope_SelectMany.methodeSelectManyEntier();
 //Ope_SelectMany.methodeSelectManyDate();
-Ope_OrderBy.getOperOrderBy();
-Ope_OrderBy.getOperOrderByDescending();
-
+//Ope_OrderBy.getOperOrderBy();
+//Ope_OrderBy.getOperOrderByDescending();
+Ope_GroupBy.methodeGroupBy();
 Console.ReadLine();
 
 
