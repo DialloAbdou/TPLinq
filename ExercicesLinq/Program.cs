@@ -9,12 +9,15 @@ var faker = new Faker<Personne>()
     .RuleFor(p => p.Nom, f => f.Person.LastName)
     .RuleFor(p => p.Prenom, f => f.Person.FirstName)
     .RuleFor(p => p.Age, f => (int)DateTime.Today.Subtract(f.Person.DateOfBirth).TotalDays / 365);
+var adresseFaker = new Faker<Adresse>()
+    .RuleFor(p => p.Id, f => f.IndexFaker)
+    .RuleFor(p => p.AdressePostal, f => f.Address.FullAddress());
+var adresses = adresseFaker.Generate(100);
 List<Personne>? personnes = faker.Generate(100);
-//foreach (var person in personnes)
-//{
-//    int nbEnfant = Random.Shared.Next(0,6);
-//    person.Enfants = faker.Generate(nbEnfant);
-//}
+foreach (var person in personnes)
+{
+    int nbEnfant = Random.Shared.Next(0, 6);    person.Enfants = faker.Generate(nbEnfant);
+}
 //// ici on recupere la liste des enfants 
 //var enfants =  personnes.SelectMany(p=> p.Enfants).ToList();
 
@@ -99,17 +102,24 @@ List<Personne>? personnes = faker.Generate(100);
 //}
 
 // Utilisation de Group by sur l'âge  des personnes
-Console.WriteLine("utilisation du groupBy");
+//Console.WriteLine("utilisation du groupBy");
 
-var personneGroup = personnes.GroupBy(p => p.Age, p=>new {p.Nom, p.Prenom});
+//var personneGroup = personnes.GroupBy(p => p.Age, p=>new {p.Nom, p.Prenom});
 
-foreach (var person in personneGroup.OrderBy(p=>p.Key))
+//foreach (var person in personneGroup.OrderBy(p=>p.Key))
+//{
+//    Console.WriteLine($"{person.Key}");
+//    foreach (var item in person)
+//    {
+//        Console.WriteLine(item.Prenom);
+//    }
+//}
+// utilisation de  Join
+
+var adressePersonnes = personnes.Join(adresses,p=>p.IdAdresse, a=>a.Id, (personne, adresse)=>new {personne,adresse});
+
+foreach(var item in adressePersonnes.Take(10))
 {
-    Console.WriteLine($"{person.Key}");
-    foreach (var item in person)
-    {
-        Console.WriteLine(item.Prenom);
-    }
+    Console.WriteLine($" la personne {item.personne.Nom}, {item.personne.Prenom} a pour adresse {item.adresse.AdressePostal}");
 }
-
 Console.ReadLine();

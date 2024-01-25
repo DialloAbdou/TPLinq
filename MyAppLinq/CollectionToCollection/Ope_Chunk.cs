@@ -10,7 +10,7 @@ namespace MyAppLinq.CollectionToCollection
     {
         public static void Methode_Chunk()
         {
-            var listeArticles = new List<Article>()
+            List<Article>? listeArticles = new List<Article>()
             {
                 new Article {Id = 1, Titre ="Marteau", CategoryId= 1},
                 new Article {Id = 2, Titre ="Ciseau", CategoryId= 1},

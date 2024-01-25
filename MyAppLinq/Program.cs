@@ -16,7 +16,8 @@ using MyAppLinq.CollectionToCollection;
 //Ope_OrderBy.getOperOrderBy();
 //Ope_OrderBy.getOperOrderByDescending();
 //Ope_GroupBy.methodeGroupBy();
-Ope_Chunk.Methode_Chunk();
+//Ope_Chunk.Methode_Chunk();
+Ope_Join.MethodJoin();
 Console.ReadLine();
 
 

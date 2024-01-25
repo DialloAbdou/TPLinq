@@ -12,3 +12,5 @@ Select : son rôle est de transformation sur chacun des éléments de votre coll
 d'élement de collection
 
 SelectMany va nous permmettrede mettre en plat une collection qui contient elle même des collections
+
+Operateur Chunck :permet de regrouper une liste en nombre de paquet 

@@ -12,5 +12,6 @@ namespace ExercicesLinq
         public string Prenom { get; set; } = string.Empty;
         public int Age { get; set; }
         public List<Personne> Enfants { get; set; }
+        public int IdAdresse { get; set; }
     }
 }
