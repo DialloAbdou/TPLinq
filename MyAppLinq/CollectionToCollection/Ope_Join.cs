@@ -36,12 +36,15 @@ namespace MyAppLinq.CollectionToCollection
                  new Categorie{ Id = 2 , Titre = "Vêtement"},
 
             };
-            var articlesCategories = articles.Join(categories, a => a.CategorieId, c => c.Id, (article, categorie) => new { article, categorie });
 
-            foreach (var item in articlesCategories)
+            var joinAtricleCategorie = articles.Join(categories, a => a.CategorieId, c => c.Id, (article, categorie) => new { article, categorie });
+
+            foreach (var item in joinAtricleCategorie)
             {
-                Console.WriteLine($"Article {item.article.Titre}, dans la Categorie {item.categorie.Titre}");
+                Console.WriteLine($"article {item.article.Titre} est dans la categorie de {item.categorie.Titre}");
             }
+
+        
         }
 
 

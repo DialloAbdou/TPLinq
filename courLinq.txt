@@ -14,3 +14,6 @@ d'élement de collection
 SelectMany va nous permmettrede mettre en plat une collection qui contient elle même des collections
 
 Operateur Chunck :permet de regrouper une liste en nombre de paquet 
+
+operateur Join : permet de rapprocher deux collections qui sont complètement differents est de definir sur la 
+base de quel propriéte qu'on peut les rapprocher pour definir un nouveau élement
