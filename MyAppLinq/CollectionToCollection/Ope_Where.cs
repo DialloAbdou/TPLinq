@@ -8,36 +8,57 @@ namespace MyAppLinq.CollectionToCollection
 {
     public static class Ope_Where
     {
-        public static void Methode()
+        private static int[] entiers = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+
+        /// <summary>
+        /// Elle recupere les elements supérieurs du tableaux
+        /// </summary>
+        public static void getEntierSuperieur()
         {
-            int[] entiers = new int[10] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
-
-            //var supEntier = entiers.Where(supTree);
-            //var supEntier = entiers.Where(e => e > 3);
-            //var supEntier = entiers.Where((_, index) => _ % 2 == 0);
-
-            //foreach ( var entier in supEntier)
-            //{
-            //    Console.WriteLine(entier);
-            //}
-            var dates = new DateTime[]
+            var supEntiers = entiers.Where(e => e > 3);
+            foreach (var entier in supEntiers)
             {
+                Console.WriteLine(entier);
+            }
+        }
+
+        /// <summary>
+        /// elle pârcourt les index du tableau impaire
+        /// </summary>
+        public static void getEntierIndexeImpaire()
+        {
+            // _ discard => car on utilise pas l'element au niveau memoire 
+            var indexImpaire = entiers.Where((_, i) => i % 2 != 0).ToArray();
+
+            foreach (var index in indexImpaire)
+            {
+                Console.WriteLine(index);
+            }
+
+        }
+
+        /// <summary>
+        /// elle renoie une liste des objets
+        /// </summary>
+        public static void getListeElmentObject()
+        {
+            var dates = new List<DateTime>()
+            {
+                DateTime.Today.AddDays(-2),
                 DateTime.Today.AddDays(-1),
                 DateTime.Today,
                 DateTime.Today.AddDays(1),
                 DateTime.Today.AddDays(2),
                 DateTime.Today.AddDays(3),
-            };
-            var dateTree = dates.Where(d => d >= DateTime.Today);
 
-            foreach (var item in dateTree)
+            };
+
+            var datetrie = dates.Where(d => d > DateTime.Today).ToArray();
+
+            foreach (var date in datetrie)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(date);
             }
-        }
-        private static bool supTree(int valeur)
-        {
-            return valeur > 3;
         }
 
 

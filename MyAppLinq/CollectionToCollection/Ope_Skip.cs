@@ -14,28 +14,37 @@ namespace MyAppLinq.CollectionToCollection
             
             var entierSkip = entiers.Skip(2);
             
-            Console.WriteLine("utilisation Skip ");
+            Console.WriteLine("utilisation Skip 2 => Commence 2 element du tableau ");
             foreach (int entier in entierSkip)
             {
                 Console.WriteLine(entier);
             }
-            var entierLastSkip = entiers.SkipLast(2);
-           
-            Console.WriteLine("utilisation LastSkip ");
+            //var entierLastSkip = entiers.SkipLast(2);
 
-            foreach (int entier in entierLastSkip)
-            {
-                Console.WriteLine(entier);
-            }
+            //Console.WriteLine("utilisation LastSkip 2 recupere tout sauf les deux derniers du tableau ");
 
-            var entierSkipWhile = entiers.SkipWhile(e => e < 4);
+            //foreach (int entier in entierLastSkip)
+            //{
+            //    Console.WriteLine(entier);
+            //}
 
-            Console.WriteLine("utilisation SkipWhile ");
+            //var entierSkipWhile = entiers.SkipWhile(e => e < 4);
 
-            foreach (var item in entierSkipWhile)
-            {
-                Console.WriteLine(item);
-            }
+            //Console.WriteLine("utilisation SkipWhile < 4 il commence à partir des element qui est supérieur  4 ");
+
+            //foreach (var item in entierSkipWhile)
+            //{
+            //    Console.WriteLine(item);
+            //}
+
+            //var entierSkipWhileandlast = entiers.SkipWhile(e => e < 4).SkipLast(2);
+
+            //Console.WriteLine("utilisation SkipWhile < 4 il commence à partir des element qui est supérieur  4 et limiter avant derniers elements ");
+
+            //foreach (var item in entierSkipWhileandlast)
+            //{
+            //    Console.WriteLine(item);
+            //}
 
         }
     }

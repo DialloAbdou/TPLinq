@@ -69,13 +69,13 @@ foreach (var person in personnes)
 //}
 //// Skip: L'utilisateur doit saisir la page qu'il veut voir et le nombre d'element par pages
 
-//Console.WriteLine("Veuillez saisir la taille de page ");
+Console.WriteLine("Veuillez saisir la taille de page ");
 
-//int taille = int.Parse(Console.ReadLine());
+int taille = int.Parse(Console.ReadLine()); //indique le nombre d'élement par pages
 
-//Console.WriteLine("veuillez saisir le numes de pages");
-//int pages = int.Parse(Console.ReadLine());
-//var personneParPages = personnes.Skip((pages-1)*taille).Take(taille);
+Console.WriteLine("veuillez saisir le numes de pages");
+int pages = int.Parse(Console.ReadLine());
+var personneParPages = personnes.Skip((pages - 1) * taille).Take(taille);
 
 //Console.WriteLine("les personnes pour cette pages");
 
